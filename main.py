@@ -1,6 +1,7 @@
 # Libraries necessary to run: bs4, requests, and get
 from bs4 import BeautifulSoup
 import requests
+
 def main():
     print("Welcome to the small automated web scraper 1.0 \n If you need help type <help>")
 
@@ -9,11 +10,11 @@ def main():
       
         if (userInput == "help"):
             print("Commands\n<help> brings this up\n<quit> quits the program\n<tag> lets you search for a specific HTML tag\n<url> lets you choose which URL to scrape, or input a 'URL Number'")
-      
+        # Quits the program
         if (userInput == "quit"):
             print("Goodbye...")
             return False
-      
+        # Command scrapes URl and prettifies it
         if (userInput == "url"):
             # uses beautifulsoup4 to scrape and orginize the searched URL
             print("Please enter a URL you would like to read/scrape")
@@ -25,7 +26,7 @@ def main():
                 print(soup.prettify())
             except:
                 print("That didn't work :( Try again or check your internet connection")
-
+        # Command for finding a tag within the soup
         if (userInput == "tag"):
             #searches tags in the body as per user input
             print("Please enter an HTML tag you would like to search for")
@@ -36,6 +37,12 @@ def main():
                 print("Sorry, it seems like this tag either does not occur in the HTML file, or does not exist")
             else:
                 print(searchedArray)
+        # Orginizes the searchedArray in numerical order, and prints the href name
+        if (userInput == "tag -o"):
+            
+
+
+
 
 
 main()
