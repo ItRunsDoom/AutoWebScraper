@@ -10,12 +10,14 @@ def URL():
      page = requests.get(userInput)
      soup = BeautifulSoup(page.content, 'html.parser')
      print(soup.prettify())
+     return soup
+     return page
 #tagSearch searches tags in the body as per user input
 def tagSearch():
     print("Please enter an HTML tag you would like to search for")
     userInput = input("cmd: ").lower
     for userInput in soup:
-        print
+        print soup.findAll(userInput)
 def main():
     print("Welcome to the small automated web scraper 1.0 \n If you need help type 'help'")
     # Program loop. The prompt is cmd:
