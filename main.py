@@ -50,6 +50,6 @@ def main():
         if (userInput == "links"):
             links = soup.find_all("a")
             for i in links:
-                print(links[i] + "/n")
+                print(i)
 
 main()
