@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def main():
-    print("Welcome to the small automated web scraper 1.0 \n If you need help type <help>")
+    print("Welcome to the small automated web scraper 1.0 \nIf you need help type <help>")
 
     while (True):
         userInput = input("cmd: ").lower()
@@ -36,13 +36,12 @@ def main():
             if (len(searchedArray) == 0):
                 print("Sorry, it seems like this tag either does not occur in the HTML file, or does not exist")
             else:
-                print(searchedArray)
-        # Orginizes the searchedArray in numerical order, and prints the href name
-        if (userInput == "tag -o"):
-
-
-
-
-
+                # Takes the searchedArray and prints it in an easier way to read for the user
+                n = 1
+                for i in searchedArray:
+                    n += n
+                    str(i)
+                    str(n)
+                    print(i + " this is link number " + n)
 
 main()
