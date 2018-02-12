@@ -9,7 +9,7 @@ def main():
         userInput = input("cmd: ").lower()
         # The help page
         if (userInput == "help"):
-            print("Commands\n<help> brings this up\n<quit> quits the program\n<tag> lets you search for a specific HTML tag\n<url> lets you choose which URL to scrape, or input a 'URL Number'")
+            print("Commands\n<help> brings this up\n<quit> quits the program\n<tag> lets you search for a specific HTML tag\n<url> lets you choose which URL to scrape\n<links> prints out links in order")
 
         # Quits the program
         if (userInput == "quit"):
@@ -48,8 +48,11 @@ def main():
 
         # Takes all the links in soup and assignes them a number. It also prints the corrosponding href name
         if (userInput == "links"):
-            links = soup.find_all("a")
-            for i in links:
-                print(i)
+            try:
+                links = soup.find_all("a")
+                for i in links:
+                    print(i)
+            except Exception:
+                print("Sorry it seems you did not choose a URL to scrape")
 
 main()
